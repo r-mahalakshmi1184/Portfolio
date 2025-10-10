@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import heroImage from "../assets/hero1.jpeg"; // adjust path based on your folder structure
 
 export default function Hero() {
   return (
     <motion.section
       id="home"
       className="relative h-screen flex items-center justify-center bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/assets/hero1.jpeg')" }}
+      style={{ backgroundImage: `url(${heroImage})` }}
       animate={{ backgroundPosition: ["center", "center 10%"] }}
       transition={{ repeat: Infinity, duration: 15, repeatType: "reverse" }}
     >
@@ -20,7 +21,6 @@ export default function Hero() {
         transition={{ duration: 1 }}
         className="relative z-10 text-center md:text-left px-6 md:px-20 max-w-4xl 
             bg-black/30 backdrop-blur-md p-10 rounded-2xl border border-pink-500/30 shadow-[0_0_20px_rgba(236,72,153,0.2)]"
-
       >
         {/* Name with Gradient */}
         <motion.h1
