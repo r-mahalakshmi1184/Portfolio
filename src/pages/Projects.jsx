@@ -1,52 +1,62 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
+import hero1 from "../assets/hero1.jpeg";
 
 const projects = [
   {
-    title: "Raw Material Prediction",
-    category: "Company Project – Ramco Cements",
-    tech: "PyQt5, ML",
+    title: "Interpretable Cardiovascular risk prediction using TabNet",
+    category: "",
+    tech: "Python, Deep Learning, TabNet, SHAP",
     description:
-      "Forecasting model for cement industry stock predictions. Developed a low-stock alert system using machine learning.",
-    img: "assets/dashboard.png",
-    github: "https://github.com/your-repo",
+      "Designed and implemented an interpretable deep learning model using TabNet for cardiovascular risk prediction, enabling transparent and accurate analysis of clinical data.",
+    img: hero1,
+    github: "https://github.com/r-mahalakshmi1184/Final-year-project",
   },
   {
-    title: "Water Consumption Monitoring",
-    category: "Company Project – Ramco Cements",
-    tech: "PyQt5, Data Visualization, ML",
+    title: "Real time Attendance Tracking System",
+    category: "",
+    tech: "Python, OpenCV, Deepface, Django",
     description:
-      "Interactive dashboard to track industrial water usage. Integrated Sankey diagrams and alert systems to optimize resource consumption.",
-    img: "assets/sankey diagram.png",
-    github: "https://github.com/your-repo",
+      "Real-Time Attendance Tracking System that uses facial recognition to automatically mark staff attendance. Instead of relying on manual registers or RFID cards, the system leverages AI and computer vision for accurate, secure, and automated attendance management.",
+    img: hero1,
+    github: "https://github.com/r-mahalakshmi1184/Real-time-Attendance-tracking-System",
   },
   {
-    title: "Mess Management System",
-    category: "College Project",
-    tech: "Django, MySQL, Chart.js",
+    title: "AI Ecommerce Analytics",
+    category: "",
+    tech: "NLP, LLM (Ollama-Mistral), SQL",
     description:
-      "A role-based inventory system to track purchases, usage, and stock levels. Implemented email notifications for low stock alerts and real-time data visualizations.",
-    img: "assets/Availablestock.png",
-    github: "https://github.com/your-repo",
+      "Developed an AI-driven natural language analytics system that converts user queries into SQL using a local LLM (Ollama–Mistral) and retrieves insights from e-commerce data via a Flask interface.",
+    img: hero1,
+    github: "https://github.com/r-mahalakshmi1184/AI_ecommerce-analytics",
   },
   {
-    title: "News Analyzer",
-    category: "Self Project",
-    tech: "NLP, Streamlit, Plotly, Web Scraping",
+    title: "AI ChatBot",
+    category: "",
+    tech: "NLP, Scikit-learn, TF-IDF, CSV",
     description:
-      "Complete news analysis platform with article scraping, sentiment analysis, topic extraction, and translation. Integrated Q&A system and interactive charts.",
-    img: "assets/scrapping.png",
-    github: "https://github.com/your-repo",
+      "Developed an AI-powered FAQ chatbot that retrieves relevant answers using TF-IDF and cosine similarity from an SQLite database and fallback response for unavailable data.",
+    img: hero1,
+    github: "https://github.com/r-mahalakshmi1184/NLP-Chatbot",
   },
   {
-    title: "Image Cartoonifier",
-    category: "Self Project",
-    tech: "OpenCV, Deep Learning, Streamlit",
+    title: "Human Gesture Recognition",
+    category: "",
+    tech: "OpenCV, CNN, Mediapipe",
     description:
-      "Web app that transforms images into cartoon-style visuals using image processing. Interactive UI with real-time previews and multiple style filters.",
-    img: "assets/upload.png",
-    github: "https://github.com/your-repo",
+      "Developed a real-time human action recognition system using MediaPipe for hand tracking and OpenCV for video processing to classify gestures using threshold-based frequency.",
+    img: hero1,
+    github: "https://github.com/r-mahalakshmi1184/Human-Action-Recognition-using-3D-CNN",
+  },
+  {
+    title: "Natural language to SQL",
+    category: "",
+    tech: "NLP, SQLite3, LLM, Pandas",
+    description:
+      "AI-powered system to generate and execute SQL queries. Converts natural language questions into SQL using an LLM and returns query results from a SQLite database.",
+    img: hero1,
+    github: "https://github.com/r-mahalakshmi1184/Natural-language-to-SQL",
   },
 ];
 
@@ -100,13 +110,13 @@ const Projects = () => {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
             viewport={{ once: true }}
-            className="relative group"
+            className="relative group h-full"
           >
             {/* Glow border effect */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500"></div>
 
             {/* Card Content */}
-            <div className="relative bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-[0_0_20px_rgba(236,72,153,0.08)] transition-all duration-500 flex flex-col">
+            <div className="relative bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-[0_0_20px_rgba(236,72,153,0.08)] transition-all duration-500 flex flex-col h-full">
               {/* Image */}
               <div className="relative w-full h-52 overflow-hidden">
                 <img

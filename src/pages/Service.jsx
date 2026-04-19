@@ -15,13 +15,13 @@ const services = [
   },
   {
     icon: <Layout className="text-white" size={36} />,
-    title: "UI / UX Design",
-    desc: "Designing intuitive interfaces and engaging digital experiences with a focus on usability and elegance.",
+    title: "UI Designer",
+    desc: "Creating intuitive and visually appealing user interfaces with modern design principles.",
   },
   {
     icon: <Code className="text-white" size={36} />,
-    title: "Django Development",
-    desc: "Building secure, scalable web applications with Django and Python for robust backend systems.",
+    title: "Python Development",
+    desc: "Developing robust applications and scripts using Python for various domains including automation and data processing.",
   },
   {
     icon: <Monitor className="text-white" size={36} />,
@@ -30,8 +30,8 @@ const services = [
   },
   {
     icon: <Cog className="text-white" size={36} />,
-    title: "Software Solutions",
-    desc: "Delivering efficient, reliable, and automated software systems that streamline workflows and boost productivity.",
+    title: "Business Development Executive",
+    desc: "Driving business growth through strategic partnerships, market analysis, and client relationship management.",
   },
 ];
 
@@ -91,7 +91,7 @@ export default function Services() {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500"></div>
 
             {/* Card Content */}
-            <div className="relative bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-10 text-center shadow-xl hover:shadow-[0_0_15px_rgba(236,72,153,0.05)] transition-all duration-500">
+            <div className="relative bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-10 text-center shadow-xl hover:shadow-[0_0_15px_rgba(236,72,153,0.05)] transition-all duration-500 h-full flex flex-col">
               <motion.div
                 whileHover={{ scale: 1.2, rotate: 10 }}
                 transition={{ type: "spring", stiffness: 200 }}

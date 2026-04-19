@@ -18,10 +18,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full bg-black/40 backdrop-blur-md text-white z-50 transition-all duration-300">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4 md:py-6">
-        {/* Logo / Name */}
-        <h1 className="text-2xl md:text-3xl font-extrabold text-pink-500 tracking-wide">
-          Shifana<span className="text-white">.</span>
-        </h1>
+        {/* Logo / Name removed */}
 
         {/* Desktop Nav Links */}
         <nav className="hidden md:block">
@@ -39,11 +36,7 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        {/* Phone Section (Desktop) */}
-        <div className="hidden md:flex items-center space-x-2 text-base font-light">
-          <Phone className="w-5 h-5 text-pink-400" />
-          <span>8610293724</span>
-        </div>
+        {/* Phone Section removed */}
 
         {/* Hamburger Menu (Mobile) */}
         <button
@@ -69,7 +62,6 @@ export default function Navbar() {
           ))}
           <div className="flex justify-center items-center space-x-2 pt-4 text-base font-light">
             <Phone className="w-5 h-5 text-pink-400" />
-            <span>8610293724</span>
           </div>
         </div>
       )}

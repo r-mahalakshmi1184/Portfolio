@@ -6,7 +6,7 @@ import heroAnimation from "../assets/hero-animation.json"; // ✅ correct import
 export default function About() {
   const paragraphs = [
     "I am an AI & Data Science professional passionate about crafting intelligent, user-focused solutions that merge creativity with technology.",
-    "My expertise spans data analysis, machine learning, and full-stack web development — turning raw data into meaningful insights and experiences.",
+    "My expertise spans data analysis, machine learning, and AI models — turning raw data into meaningful insights and experiences.",
     "I believe technology should be inclusive and empowering — designed to make life simpler and smarter for everyone.",
     "Every project I work on combines innovation, logic, and empathy — creating digital experiences that truly make an impact.",
   ];
@@ -53,7 +53,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl font-bold mb-6 leading-tight"
             >
-              Hi There! I'm <span className="text-pink-500">Shifana S</span>
+              Hi There! I'm <span className="text-pink-500">Mahalakshmi R</span>
             </motion.h1>
 
             <div className="relative min-h-[140px] flex items-center mb-10">
@@ -81,10 +81,8 @@ export default function About() {
               className="grid grid-cols-2 gap-y-4 text-gray-300 mb-10 text-lg"
             >
               {[
-                ["Birthday:", "Feb 15, 2005"],
-                ["Phone:", "+91 8610293724"],
-                ["Email:", "shifana1502@gmail.com"],
-                ["From:", "Tirunelveli, India"],
+                ["Birthday:", "Sep 19, 2004"],
+                ["From:", "Virudhunagar, India"],
                 ["Language:", "English, Tamil"],
               ].map(([label, value], i) => (
                 <motion.li
@@ -112,7 +110,7 @@ export default function About() {
             </div>
 
             <motion.a
-              href="/assets/general resume.pdf"
+              href="/portfolio/assets/Mahalakshmi R _ Resume.pdf"
               download
               whileHover={{ scale: 1.05, backgroundColor: "#ec4899" }}
               whileTap={{ scale: 0.95 }}

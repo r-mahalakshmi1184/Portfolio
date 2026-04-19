@@ -53,7 +53,7 @@ const Contact = () => {
             <h3 className="text-4xl font-bold mb-8">Connect With Me</h3>
             <div className="flex flex-col space-y-6">
               <motion.a
-                href="https://github.com/Shifana-S15"
+                href="https://github.com/r-mahalakshmi1184"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, color: "#ec4899" }}
@@ -64,7 +64,7 @@ const Contact = () => {
               </motion.a>
 
               <motion.a
-                href="https://www.linkedin.com/in/shifana-s-214513254/"
+                href="https://linkedin.com/in/mahalakshmi-r-a786a9247"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, color: "#ec4899" }}
@@ -75,7 +75,7 @@ const Contact = () => {
               </motion.a>
 
               <motion.a
-                href="mailto:shifana1502@gmail.com"
+                href="mailto:rmahalakshmi1184@gmail.com"
                 whileHover={{ scale: 1.05, color: "#ec4899" }}
                 className="flex items-center space-x-4 text-2xl text-gray-300 hover:text-pink-400 transition"
               >
@@ -92,9 +92,7 @@ const Contact = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h3 className="text-4xl font-bold mb-6">Contacts</h3>
-            <p className="text-2xl text-gray-300">shifana1502@gmail.com</p>
-            <p className="text-2xl text-gray-300">+91 8610293724</p>
+
           </motion.div>
         </motion.div>
 

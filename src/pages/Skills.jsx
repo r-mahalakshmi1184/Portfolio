@@ -2,14 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const skills = [
-  { title: "Programming & Scripting", percent: 85, details: "Python, Java, SQL" },
-  { title: "Data Analytics & Visualization", percent: 90, details: "Power BI, Excel, Pandas, Matplotlib, Plotly, Seaborn, Chart.js, Jupyter" },
-  { title: "Machine Learning & AI", percent: 88, details: "Scikit-Learn, TensorFlow, Keras, PyTorch, XGBoost, LightGBM, OpenCV" },
-  { title: "Natural Language Processing (NLP)", percent: 82, details: "Sentiment Analysis, Topic Modeling, SpaCy, NLTK, Gensim, Transformers" },
-  { title: "Web Development & Frameworks", percent: 80, details: "Django, Flask, Streamlit, HTML, CSS" },
-  { title: "UI/UX & Design", percent: 75, details: "Figma, PyQt5, Tkinter" },
-  { title: "Database Management", percent: 65, details: "MySQL, PostgreSQL" },
-  { title: "Other Tools & Technologies", percent: 62, details: "Git & GitHub, Web Scraping, Data Handling, Deep Translator" },
+  { title: "Programming & Scripting", percent: 80, details: "Python, SQL" },
+  { title: "Data Analytics & Visualization", percent: 85, details: "Power BI, Excel, Pandas, Matplotlib, Plotly, Seaborn, Chart.js, Jupyter" },
+  { title: "Machine Learning & AI", percent: 90, details: "Scikit-Learn, TensorFlow, Keras, PyTorch, XGBoost, LightGBM, OpenCV" },
+  { title: "Natural Language Processing (NLP)", percent: 80, details: "LLM & RAG Model, Llama, Hugging Face, SpaCy, NLTK, Transformers" },
+  { title: "UI Development/Design Tools", percent: 50, details: "HTML, CSS, Figma, Canva" },
+  { title: "Other Tools & Technologies", percent: 80, details: "GPT (OpenAI), Claude, Copilot (Microsoft), Git & GitHub" },
 ];
 
 export default function Skills() {

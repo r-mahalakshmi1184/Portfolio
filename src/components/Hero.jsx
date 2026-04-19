@@ -27,10 +27,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-6xl sm:text-7xl md:text-8xl font-extrabold leading-tight mb-6 
+
+          className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight mb-6 
                      text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-500"
         >
-          SHIFANA S
+          MAHALAKSHMI R
         </motion.h1>
 
         {/* Typing Animation for Roles */}
@@ -42,11 +43,10 @@ export default function Hero() {
         >
           <TypeAnimation
             sequence={[
-              "Data Scientist", 2000,
-              "ML Engineer", 2000,
-              "Web Developer", 2000,
-              "Software Developer", 2000,
-              "UI Designer", 2000,
+              "AI/ML engineer", 2000,
+              "Data Analyst", 2000,
+              "UI developer", 2000,
+              "Business Development Executive", 2000,
             ]}
             speed={50}
             repeat={Infinity}
