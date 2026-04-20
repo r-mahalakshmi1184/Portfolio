@@ -1,30 +1,44 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "emailjs-com";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const Contact = () => {
-  const form = useRef();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [status, setStatus] = useState(null); // null | "success" | "error" | "submitting"
 
-  const sendEmail = (e) => {
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("submitting");
 
-    emailjs
-      .sendForm(
-        "service_kfif6n8", // ✅ your service ID
-        "template_axotb6q", // ✅ your template ID
-        form.current,
-        "sAYF9ozKsdGSO_nc1" // ✅ your public key
-      )
-      .then(
-        () => {
-          alert("✅ Message sent successfully!");
-          form.current.reset();
+    try {
+      const response = await fetch("https://formspree.io/f/mrerlyza", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
         },
-        () => {
-          alert("❌ Failed to send message. Try again later.");
-        }
-      );
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
   };
 
   return (
@@ -127,7 +141,7 @@ const Contact = () => {
               Contact Form
             </h3>
 
-            <form ref={form} onSubmit={sendEmail} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -136,8 +150,10 @@ const Contact = () => {
                 <label className="block text-lg mb-2">Name</label>
                 <input
                   type="text"
-                  name="user_name"
+                  name="name"
                   placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-black border border-gray-700 text-white focus:outline-none focus:border-pink-500"
                 />
@@ -151,8 +167,10 @@ const Contact = () => {
                 <label className="block text-lg mb-2">Email</label>
                 <input
                   type="email"
-                  name="user_email"
+                  name="email"
                   placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-black border border-gray-700 text-white focus:outline-none focus:border-pink-500"
                 />
@@ -168,6 +186,8 @@ const Contact = () => {
                   rows="4"
                   name="message"
                   placeholder="Write your message..."
+                  value={formData.message}
+                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-black border border-gray-700 text-white focus:outline-none focus:border-pink-500"
                 ></textarea>
@@ -175,12 +195,33 @@ const Contact = () => {
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full py-3 rounded-lg bg-pink-500 text-white font-semibold text-lg shadow-md hover:bg-pink-600 hover:shadow-pink-500/40 transition-all duration-300"
+                disabled={status === "submitting"}
+                whileHover={{ scale: status === "submitting" ? 1 : 1.05 }}
+                whileTap={{ scale: status === "submitting" ? 1 : 0.95 }}
+                className="w-full py-3 rounded-lg bg-pink-500 text-white font-semibold text-lg shadow-md hover:bg-pink-600 hover:shadow-pink-500/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {status === "submitting" ? "Sending..." : "Send Message"}
               </motion.button>
+
+              {status === "success" && (
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-green-400 text-center text-lg"
+                >
+                  ✅ Message sent successfully!
+                </motion.p>
+              )}
+
+              {status === "error" && (
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-red-400 text-center text-lg"
+                >
+                  ❌ Failed to send message. Try again later.
+                </motion.p>
+              )}
             </form>
           </motion.div>
         </motion.div>
