@@ -25,7 +25,8 @@ const Contact = () => {
       const response = await fetch("https://formspree.io/f/mrerlyza", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Accept": "application/json"
         },
         body: JSON.stringify(formData)
       });
@@ -34,9 +35,14 @@ const Contact = () => {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
+        const data = await response.json();
+        if (data.error) {
+          console.error("Formspree error:", data.error);
+        }
         setStatus("error");
       }
     } catch (error) {
+      console.error("Submission error:", error);
       setStatus("error");
     }
   };
